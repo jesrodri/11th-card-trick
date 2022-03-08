@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Deck from './logic/ShowDeck'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('<Deck />', () => {
+  it('displays cards', () => {
+    render(<Deck />);
+    const deck = screen.getByTestId('deck');
+    expect(deck).toBeInTheDocument();
+  })
 });
