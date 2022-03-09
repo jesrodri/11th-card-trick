@@ -1,5 +1,5 @@
 import './App.css';
-import Deck from './logic/ShowDeck';
+import Deck from './components/Deck';
 
 function App() {
   return (
