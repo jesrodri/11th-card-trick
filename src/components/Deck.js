@@ -1,31 +1,22 @@
-import { buildDeck } from '../logic/utils';
-import { TRICK_CARDS, VALUES, SUITS, ROW_CARDS } from '../logic/utils';
+import { trickDeck } from '../logic/deck';
 
 const Deck = () => {
-  const initialDeck = buildDeck(VALUES, SUITS);
-  const shuffledDeck = [...initialDeck].sort(() => Math.random() - 0.5);
-  const trickDeck = shuffledDeck.slice(0, TRICK_CARDS);
-  const firstRow = trickDeck.slice(0, ROW_CARDS);
-  const secondRow = trickDeck.slice(ROW_CARDS, (ROW_CARDS*2));
-  const thirdRow = trickDeck.slice((ROW_CARDS*2), TRICK_CARDS);
 
+  function cardRow(deck) {
+    return(
+      deck.map(row => (
+      <div className="cards--row">
+        {row.map(({value, suit}) => (
+          <div className={`card card--${suit}`} key={`${value}-${suit}`}>{value}{suit}</div>
+        ))}
+      </div>
+      ))
+    );
+  };
+  
   return(
     <div className="cards" data-testid="deck">
-      <div className="cards--row">
-        {firstRow.map(({value, suit}) => (
-            <div className={`card card--${suit}`} key={`${value}-${suit}`}>{value}{suit}</div>
-        ))}
-      </div>
-      <div className="cards--row">
-        {secondRow.map(({value, suit}) => (
-            <div className={`card card--${suit}`} key={`${value}-${suit}`}>{value}{suit}</div>
-        ))}
-      </div>
-      <div className="cards--row">
-        {thirdRow.map(({value, suit}) => (
-            <div className={`card card--${suit}`} key={`${value}-${suit}`}>{value}{suit}</div>
-        ))}
-      </div>
+        {cardRow( trickDeck )};
     </div>
   );
 };
