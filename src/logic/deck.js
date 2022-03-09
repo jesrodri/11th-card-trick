@@ -16,4 +16,8 @@ export function buildDeck(VALUES, SUITS) {
   return deck;
 }
 
-export { TRICK_CARDS, VALUES, SUITS };
+const initialDeck = buildDeck(VALUES, SUITS);
+const shuffledDeck = [...initialDeck].sort(() => Math.random() - 0.5);
+const trickDeck = shuffledDeck.slice(0, TRICK_CARDS);
+
+export { trickDeck };

@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { buildDeck } from '../logic/utils'
+import { buildDeck } from '../logic/deck'
 
 const VALUES = [ "A", "2", "3" ];
 const SUITS = [ "♥", "♠" ];
