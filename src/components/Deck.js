@@ -1,7 +1,5 @@
 import { buildDeck } from '../logic/utils';
-import { TRICK_CARDS } from '../logic/utils';
-import { VALUES } from '../logic/utils';
-import { SUITS } from '../logic/utils';
+import { TRICK_CARDS, VALUES, SUITS } from '../logic/utils';
 
 const Deck = () => {
   const initialDeck = buildDeck(VALUES, SUITS);

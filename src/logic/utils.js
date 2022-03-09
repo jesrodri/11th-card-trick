@@ -16,6 +16,4 @@ export function buildDeck(VALUES, SUITS) {
   return deck;
 }
 
-export { TRICK_CARDS };
-export { VALUES };
-export { SUITS };
+export { TRICK_CARDS, VALUES, SUITS };
