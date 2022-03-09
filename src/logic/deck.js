@@ -1,6 +1,7 @@
 const VALUES = [ "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" ];
 const SUITS = [ "♥", "♠", "♦", "♣" ];
 const TRICK_CARDS = 21;
+const ROW_CARDS = 7;
 
 export function buildDeck(VALUES, SUITS) {
   let deck = [];

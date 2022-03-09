@@ -7,13 +7,13 @@
 .card {
   display: flex;
   justify-content: center;
-  height: 200px;
-  width: 130px;
+  height: 150px;
+  width: 100px;
   margin: var(--margin-16);
   border: solid 2px;
   border-radius: 8px;
-  font-size: var(--font-50);
-  padding-top: var(--padding-60);
+  font-size: var(--font-40);
+  padding-top: var(--padding-50);
   background-color: var(--white);
   letter-spacing: 8px;
   box-shadow:  2px 2px 4px var(--black);
@@ -28,4 +28,8 @@
 .card:hover{
   transition: all 1s;
   transform: scale(1.1);
+}
+
+.cards--row{
+  display: flex;
 }
