@@ -2,6 +2,6 @@ body {
   /* background-color: var(--secondary-bg-color); */
   font-size: var(--font-18);
   font-family: var(--font-nunito);
-  background-image: url('../../img/background.jpg');
+  background: linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)100%), url('../../img/background.jpg');
   height: 100%;
 }

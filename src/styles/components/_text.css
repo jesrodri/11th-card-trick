@@ -1,0 +1,6 @@
+.text{
+  color: var(--white);
+  font-weight: 400;
+  text-align: center;
+  text-shadow: 2px 2px 3px var(--black);
+}
