@@ -1,8 +1,10 @@
 import { buildDeck } from '../logic/utils';
 import { TRICK_CARDS } from '../logic/utils';
+import { VALUES } from '../logic/utils';
+import { SUITS } from '../logic/utils';
 
 const Deck = () => {
-  const initialDeck = buildDeck();
+  const initialDeck = buildDeck(VALUES, SUITS);
   const shuffledDeck = [...initialDeck].sort(() => Math.random() - 0.5);
   const trickDeck = shuffledDeck.slice(0, TRICK_CARDS);
 
