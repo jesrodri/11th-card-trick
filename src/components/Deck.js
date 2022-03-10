@@ -13,8 +13,6 @@ const Deck = () => {
       setCurrentDeck( joinDeck(pickedRow, currentDeck) );
       setRound(round + 1);
     }
-    console.log(trickDeck);
-    console.log(currentDeck);
   };
 
   return(

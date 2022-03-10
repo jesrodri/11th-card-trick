@@ -1,19 +1,16 @@
-export const joinDeck = (pickedRow, mergedDeck) => {
+export const joinDeck = (pickedRow, currentDeck) => {
   let joinedDeck = [[], [], []];
   if (pickedRow === 1) {
-    joinedDeck = [...mergedDeck[2], ...mergedDeck[0], ...mergedDeck[1]];
+    joinedDeck = [...currentDeck[2], ...currentDeck[0], ...currentDeck[1]];
   } else if (pickedRow === 2) {
-    joinedDeck = [...mergedDeck[2], ...mergedDeck[1], ...mergedDeck[0]];
+    joinedDeck = [...currentDeck[2], ...currentDeck[1], ...currentDeck[0]];
   } else if (pickedRow === 3) {
-    joinedDeck = [...mergedDeck[1], ...mergedDeck[2], ...mergedDeck[0]];
+    joinedDeck = [...currentDeck[1], ...currentDeck[2], ...currentDeck[0]];
   }
-  console.log(pickedRow);
-  // console.log(trickDeck);
-  // console.log(joinedDeck);
   return dealDeck(joinedDeck);
 }
 
-const dealDeck = (joinedDeck) => {
+export const dealDeck = (joinedDeck) => {
   let newDeck = [[], [], []];
 
   joinedDeck.map(card => (

@@ -1,7 +1,7 @@
 const CardRow = ({ deck }) => {
 
   return(
-    <div className='cards--container'>
+    <div className="cards--container">
       {deck.map(row => (
       <div className="cards--row">
         {row.map(({value, suit}) => (
