@@ -6,15 +6,15 @@ import { joinDeck } from '../logic/trick';
 const Deck = () => {
 
   const [round, setRound] = useState(0);
-  const [mergedDeck, setMergedDeck] = useState(trickDeck);
+  const [currentDeck, setCurrentDeck] = useState(trickDeck);
 
   const pickRow = (pickedRow) => {
     if (round < 3) {
-      setMergedDeck( joinDeck(pickedRow) );
+      setCurrentDeck( joinDeck(pickedRow, currentDeck) );
       setRound(round + 1);
     }
     console.log(trickDeck);
-    console.log(mergedDeck);
+    console.log(currentDeck);
   };
 
   return(
@@ -24,7 +24,7 @@ const Deck = () => {
         <button className="button" onClick={() => pickRow(2)}>2</button>
         <button className="button" onClick={() => pickRow(3)}>3</button>
       </div>
-      <CardRow deck={mergedDeck}/>;
+      <CardRow deck={currentDeck}/>;
     </div>
   );
 };

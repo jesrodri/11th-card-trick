@@ -1,13 +1,11 @@
-import { trickDeck } from './deck';
-
-export const joinDeck = (pickedRow) => {
+export const joinDeck = (pickedRow, mergedDeck) => {
   let joinedDeck = [[], [], []];
   if (pickedRow === 1) {
-    joinedDeck = [...trickDeck[2], ...trickDeck[0], ...trickDeck[1]];
+    joinedDeck = [...mergedDeck[2], ...mergedDeck[0], ...mergedDeck[1]];
   } else if (pickedRow === 2) {
-    joinedDeck = [...trickDeck[2], ...trickDeck[1], ...trickDeck[1]];
+    joinedDeck = [...mergedDeck[2], ...mergedDeck[1], ...mergedDeck[0]];
   } else if (pickedRow === 3) {
-    joinedDeck = [...trickDeck[1], ...trickDeck[2], ...trickDeck[0]];
+    joinedDeck = [...mergedDeck[1], ...mergedDeck[2], ...mergedDeck[0]];
   }
   console.log(pickedRow);
   // console.log(trickDeck);
