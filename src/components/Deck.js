@@ -1,5 +1,5 @@
-import CardRow from './CardRow';
 import { useState } from 'react';
+import DecideAction from './DecideAction';
 import { trickDeck } from '../logic/deck';
 import { joinDeck } from '../logic/trick';
 
@@ -22,7 +22,7 @@ const Deck = () => {
         <button className="button" onClick={() => pickRow(2)}>2</button>
         <button className="button" onClick={() => pickRow(3)}>3</button>
       </div>
-      <CardRow deck={currentDeck}/>;
+      <DecideAction round={round} deck={currentDeck} />;
     </div>
   );
 };
