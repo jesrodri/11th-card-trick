@@ -1,5 +1,6 @@
 const VALUES = [ "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" ];
 const SUITS = [ "♥", "♠", "♦", "♣" ];
+const ROW_CARDS = 7;
 const TRICK_CARDS = 21;
 
 export function buildDeck(VALUES, SUITS) {
@@ -18,6 +19,11 @@ export function buildDeck(VALUES, SUITS) {
 
 const initialDeck = buildDeck(VALUES, SUITS);
 const shuffledDeck = [...initialDeck].sort(() => Math.random() - 0.5);
-const trickDeck = shuffledDeck.slice(0, TRICK_CARDS);
+const cutDeck = shuffledDeck.slice(0, TRICK_CARDS);
+const firstRow = cutDeck.slice(0, ROW_CARDS);
+const secondRow = cutDeck.slice(ROW_CARDS, (ROW_CARDS*2));
+const thirdRow = cutDeck.slice((ROW_CARDS*2), TRICK_CARDS);
+const trickDeck = [firstRow, secondRow, thirdRow];
 
 export { trickDeck };
+
