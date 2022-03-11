@@ -4,7 +4,8 @@
   justify-content: space-around;
 }
 
-.button{
+.button,
+.button--big{
   width: 50px;
   height: 50px;
   border-radius: 30px;
@@ -19,6 +20,13 @@
   cursor: pointer;
 }
 
-.button:hover{
+.button:hover,
+.button--big:hover{
   border: solid 2px var(--dark-red);
+}
+
+.button--big{
+  width: 150px;
+  margin-top: 60px;
+  margin-left: 720px;
 }

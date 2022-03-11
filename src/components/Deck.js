@@ -2,6 +2,8 @@ import { joinDeck } from '../logic/trick';
 import { useState } from 'react';
 import CardRow from './CardRow';
 import RevealCard from './RevealCard';
+import { buildDeck, prepareDeck } from '../logic/deck';
+import { VALUES, SUITS } from '../logic/constants';
 
 const Deck = ({ deck }) => {
 
@@ -9,11 +11,14 @@ const Deck = ({ deck }) => {
   const [currentDeck, setCurrentDeck] = useState(deck);
 
   const pickRow = (pickedRowId) => {
-    if (round < 3) {
-      setCurrentDeck( joinDeck(pickedRowId, currentDeck) );
-      setRound(round => round + 1);
-    }
+    setCurrentDeck( joinDeck(pickedRowId, currentDeck) );
+    setRound(round => round + 1);
   };
+
+  const resetTrick = (round) => {
+    setRound(0);
+    setCurrentDeck( prepareDeck( [...buildDeck(VALUES, SUITS)] ) );
+  }
 
   if (round < 3) {
     return(
@@ -28,10 +33,13 @@ const Deck = ({ deck }) => {
     );
   } else if (round === 3) {
       return(
+        <>
         <div className="cards" data-testid="deck">
           <p className="text--result">Your card is...</p>
           <RevealCard deck={currentDeck}/>
         </div>
+        <button className="button--big" onClick={() => resetTrick(round)}>Play Again</button>
+        </>
       );
     }
 };

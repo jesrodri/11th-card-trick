@@ -1,6 +1,10 @@
 import '../styles/App.css';
 import Deck from './Deck';
-import { trickDeck } from '../logic/deck';
+import { buildDeck, prepareDeck } from '../logic/deck';
+import { VALUES, SUITS } from '../logic/constants';
+
+const initialDeck = buildDeck(VALUES, SUITS);
+const trickDeck = prepareDeck([...initialDeck]);
 
 function App() {
   return (
