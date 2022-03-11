@@ -1,12 +1,9 @@
-const VALUES = [ "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" ];
-const SUITS = [ "♥", "♠", "♦", "♣" ];
-const ROW_CARDS = 7;
-const TRICK_CARDS = 21;
+import { ROW_CARDS, TRICK_CARDS } from './constants';
 
-export function buildDeck(VALUES, SUITS) {
+export function buildDeck(values, suits) {
   let deck = [];
-  SUITS.forEach(suit => { 
-    VALUES.forEach(value => {
+  suits.forEach(suit => { 
+    values.forEach(value => {
       let card = {
         value: value,
         suit: suit
@@ -17,12 +14,17 @@ export function buildDeck(VALUES, SUITS) {
   return deck;
 }
 
-const initialDeck = buildDeck(VALUES, SUITS);
-const shuffledDeck = [...initialDeck].sort(() => Math.random() - 0.5);
-const cutDeck = shuffledDeck.slice(0, TRICK_CARDS);
-const firstRow = cutDeck.slice(0, ROW_CARDS);
-const secondRow = cutDeck.slice(ROW_CARDS, (ROW_CARDS*2));
-const thirdRow = cutDeck.slice((ROW_CARDS*2), TRICK_CARDS);
-const trickDeck = [firstRow, secondRow, thirdRow];
+function shuffleDeck(deck) {
+  const shuffledDeck = deck.sort(() => Math.random() - 0.5);
+  return shuffledDeck;
+}
 
-export { trickDeck };
+export function prepareDeck(deck) {
+  const shuffledDeck = shuffleDeck(deck);
+  const trickDeck = [
+    shuffledDeck.slice(0, ROW_CARDS),
+    shuffledDeck.slice(ROW_CARDS, (ROW_CARDS*2)),
+    shuffledDeck.slice((ROW_CARDS*2), TRICK_CARDS)
+  ];
+  return trickDeck;
+}

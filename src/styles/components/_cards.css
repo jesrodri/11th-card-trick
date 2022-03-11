@@ -4,7 +4,8 @@
   flex-wrap: wrap;
 }
 
-.card {
+.card,
+.picked--card{
   display: flex;
   justify-content: center;
   height: 150px;
@@ -27,4 +28,12 @@
 
 .cards--row{
   display: flex;
+}
+
+.picked--card{
+  height: 300px;
+  width: 200px;
+  padding-top: var(--padding-100);
+  font-size: var(--font-70);
+  letter-spacing: 16px;
 }
