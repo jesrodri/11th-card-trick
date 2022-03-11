@@ -1,23 +1,24 @@
-.buttons{
+.buttons--container{
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  margin: var(--margin-50);
 }
 
-.buttons__button{
-  width: 180px;
+.button{
+  width: 50px;
   height: 50px;
   border-radius: 30px;
   border: none;
-  color: var(--white);
+  margin-right: var(--margin-20);
+  color: var(--black);
   font-family: var(--font);
   font-weight: 700;
   font-size: var(--normal-font-size);
-  background-color: var(--black);
+  background-color: var(--white);
   letter-spacing: var(--letter-spacing);
   cursor: pointer;
 }
 
-.buttons__button:hover{
-  border: solid 2px var(--white);
+.button:hover{
+  border: solid 2px var(--dark-red);
 }

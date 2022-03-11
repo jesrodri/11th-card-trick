@@ -26,4 +26,3 @@ const thirdRow = cutDeck.slice((ROW_CARDS*2), TRICK_CARDS);
 const trickDeck = [firstRow, secondRow, thirdRow];
 
 export { trickDeck };
-

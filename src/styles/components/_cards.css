@@ -13,21 +13,16 @@
   border: solid 2px;
   border-radius: 8px;
   font-size: var(--font-40);
-  padding-top: var(--padding-50);
+  padding-top: var(--padding-45);
   background-color: var(--white);
   letter-spacing: 8px;
-  box-shadow:  2px 2px 4px var(--black);
-  cursor: pointer;
+  box-shadow:  4px 4px 6px var(--black);
+  cursor: grab;
   font-family: var(--font-serif);
 }
 
 .card--♥, .card--♦{
   color: var(--dark-red);
-}
-
-.card:hover{
-  transition: all 1s;
-  transform: scale(1.1);
 }
 
 .cards--row{
