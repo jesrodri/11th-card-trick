@@ -4,3 +4,11 @@
   text-align: center;
   text-shadow: 2px 2px 3px var(--black);
 }
+
+.text--result{
+  color: var(--white);
+  font-weight: 600;
+  font-size: var(--font-40);
+  padding-top: var(--padding-130);
+  padding-right: var(--padding-50);
+}

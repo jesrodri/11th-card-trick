@@ -1,12 +1,9 @@
-const VALUES = [ "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" ];
-const SUITS = [ "♥", "♠", "♦", "♣" ];
-const ROW_CARDS = 7;
-const TRICK_CARDS = 21;
+import { VALUES, SUITS, ROW_CARDS, TRICK_CARDS } from './constants';
 
-export function buildDeck(VALUES, SUITS) {
+export function buildDeck(values, suits) {
   let deck = [];
-  SUITS.forEach(suit => { 
-    VALUES.forEach(value => {
+  suits.forEach(suit => { 
+    values.forEach(value => {
       let card = {
         value: value,
         suit: suit

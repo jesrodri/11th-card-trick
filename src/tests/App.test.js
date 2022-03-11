@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Deck from './components/Deck'
+import Deck from '../components/Deck'
 
 describe('<Deck />', () => {
   it('displays cards', () => {
